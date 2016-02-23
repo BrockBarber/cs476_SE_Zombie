@@ -1,6 +1,6 @@
 /* 
  * File:   ZombieWar.cpp
- * Author: thaoc
+ * Author: thaoc, Brock Barber
  * 
  * Created on May 21, 2015, 1:54 PM
  */
