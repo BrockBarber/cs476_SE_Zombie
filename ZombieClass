@@ -14,8 +14,4 @@ Class Zombie: public Zombie {
   Zombie(int health) {
     this.health = health;
   }
-  public int attack;
-  Zombie(int attack) {
-    this.attack = attack;
-  }
 }
