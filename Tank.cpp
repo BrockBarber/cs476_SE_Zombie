@@ -15,6 +15,6 @@ Class Tank: public Zombie {
     this.health = health;
   }
   public void attack(ISurvivor* survivor) {
-    survivor.decreaseHealth(20)
+    survivor.decreaseHealth(20);
   }
 }
