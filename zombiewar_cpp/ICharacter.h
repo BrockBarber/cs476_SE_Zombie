@@ -1,6 +1,6 @@
 /* 
  * File:   ICharacter.h
- * Author: thaoc
+ * Author: thaoc, Brock
  *
  * Created on May 20, 2015, 8:10 PM
  */
@@ -10,8 +10,8 @@
 
 class ICharacter{
 public:
-    virtual void decreaseHealth(int increment=0) = 0;
-    virtual bool isAlive()=0;
+    void decreaseHealth(int);
+    bool isAlive();
 };
 
 #endif	/* ICHARACTER_H */

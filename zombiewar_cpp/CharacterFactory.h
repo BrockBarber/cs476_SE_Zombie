@@ -1,6 +1,6 @@
 /* 
  * File:   CharacterFactory.h
- * Author: thaoc
+ * Author: Thao, Brock
  *
  * Created on May 21, 2015, 1:31 PM
  * 
@@ -16,16 +16,7 @@
 #include "ICharacter.h"
 
 class CharacterFactory {
-private:
-    static CharacterFactory* i;
-public:
-    CharacterFactory();
-    CharacterFactory(const CharacterFactory& orig);
-    ICharacter* makeCharacter(std::string type);
-    static CharacterFactory* instance();
-    virtual ~CharacterFactory();
-
-
+    unique_ptr<ICharacter> makeCharacter(std::string type);
 };
 
 #endif	/* CHARACTERFACTORY_H */
