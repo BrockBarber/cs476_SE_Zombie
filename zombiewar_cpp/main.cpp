@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: thaoc
+ * Author: thaoc, Brock
  *
  * Created on May 20, 2015, 8:02 PM
  */
@@ -9,8 +9,7 @@
 #include "ZombieWar.h"
 
 
-int main(int argc, char** argv) {
-    ZombieWar* zw = new ZombieWar();
-    zw->start();
+int main() {
+	start();
 }
 
