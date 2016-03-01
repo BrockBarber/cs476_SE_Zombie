@@ -43,28 +43,51 @@ void RealZombieWar::start() {
             RealZombieWar::numZombie << " regular zombies, " << RealZombieWar::numCommonInfected << " common-infected zombies, "
             << RealZombieWar::numTank <<" tank zombies)";
 
-    for (int i = 0; i < numberOfRandomSurvivors; i++) {
-        for (int j = 0; j < numberOfRandomZombies; j++) {
-            ISurvivor *s = survivorVector[i];
-            IZombie *zombie = zombieVector[j];
-            s->attack(zombie);
-            if (!zombie->isAlive()) {
-                std::cout << "\n\t" << s->getName() << " " << i << " killed " << zombie->getName() << " " << j;
+    while(true) {
+        bool allDead = true;
+        for(int i = 0; i < survivorVector.size(); i++){
+            if(survivorVector[i]->isAlive()){
+                allDead = false;
             }
         }
-    }
+        if(allDead)
+            break;
+        allDead = true;
+        for(int i = 0; i < zombieVector.size(); i++){
+            if(zombieVector[i]->isAlive()){
+                allDead = false;
+            }
+        }
+        if(allDead)
+            break;
 
-    for (int i = 0; i < numberOfRandomZombies; i++) {
-        for (int j = 0; j < numberOfRandomSurvivors; j++) {
-            IZombie *zombie = zombieVector[i];
-            ISurvivor *s = survivorVector[j];
-            if (!s->isAlive())
-                continue;
-            //should move to attack method but don't have time right now
-            if (zombie->isAlive())
-                zombie->attack(s);
-            if (!s->isAlive()) {
-                std::cout << "\n\t" << zombie->getName() << " " << i << " killed " << s->getName() << " " << j;
+        for (int i = 0; i < numberOfRandomSurvivors; i++) {
+            for (int j = 0; j < numberOfRandomZombies; j++) {
+                ISurvivor *s = survivorVector[i];
+                IZombie *zombie = zombieVector[j];
+                if(!s->isAlive())
+                    continue;
+                if(!zombie->isAlive())
+                    continue;
+                s->attack(zombie);
+                if (!zombie->isAlive()) {
+                    std::cout << "\n\t" << s->getName() << " " << i << " killed " << zombie->getName() << " " << j;
+                }
+            }
+        }
+
+        for (int i = 0; i < numberOfRandomZombies; i++) {
+            for (int j = 0; j < numberOfRandomSurvivors; j++) {
+                IZombie *zombie = zombieVector[i];
+                ISurvivor *s = survivorVector[j];
+                if (!s->isAlive())
+                    continue;
+                //should move to attack method but don't have time right now
+                if (zombie->isAlive())
+                    zombie->attack(s);
+                if (!s->isAlive()) {
+                    std::cout << "\n\t" << zombie->getName() << " " << i << " killed " << s->getName() << " " << j;
+                }
             }
         }
     }
