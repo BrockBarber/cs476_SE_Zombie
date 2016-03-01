@@ -21,6 +21,8 @@ std::unique_ptr<ICharacter> CharacterFactory::makeCharacter(std::string type){
 		case "Zombie":
 			return std::unique_ptr<ICharacter> = make_unique<Zombie>();
 			break;
+		case "CommonInfected":
+			return std::unique_ptr<ICharacter> = make_unique<CommonInfected>();
 		default:
 			//do nothing yet
 			break;

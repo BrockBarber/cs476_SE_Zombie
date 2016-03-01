@@ -14,6 +14,7 @@
 
 #include<string>
 #include "ICharacter.h"
+#include "CommonInfected.h"
 
 class CharacterFactory {
     unique_ptr<ICharacter> makeCharacter(std::string type);
