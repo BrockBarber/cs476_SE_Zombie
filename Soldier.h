@@ -12,6 +12,9 @@ class Soldier : public Survivor {
 
 
 public:
+
+    Soldier();
+
     virtual std::string getName() override;
 
     virtual void attack(IZombie *zombie) override;

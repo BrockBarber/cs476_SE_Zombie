@@ -4,6 +4,11 @@
 
 #include "CommonInfected.h"
 
+
 void CommonInfected::attack(ISurvivor *survivor) {
-    survivor->decreaseHealth(100);
+    survivor->decreaseHealth(5);
+}
+
+CommonInfected::CommonInfected() {
+    this->health = 30;
 }

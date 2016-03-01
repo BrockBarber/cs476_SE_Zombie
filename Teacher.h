@@ -12,6 +12,10 @@ class Teacher : public Survivor {
 
 
 public:
+
+    Teacher();
+
+
     virtual void attack(IZombie *zombie) override;
 
     virtual std::string getName() override;

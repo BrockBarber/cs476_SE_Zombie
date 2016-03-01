@@ -11,6 +11,9 @@
 class Tank : public Zombie {
 
 public:
+
+    Tank();
+
     virtual void attack(ISurvivor *survivor) override;
 };
 

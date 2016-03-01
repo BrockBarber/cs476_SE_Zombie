@@ -9,7 +9,7 @@
 #include "IZombie.h"
 
 class Zombie : public IZombie{
-private:
+protected:
     int health;
 public:
 

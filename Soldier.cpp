@@ -6,9 +6,13 @@
 #include "CharacterFactory.h"
 
 void Soldier::attack(IZombie *zombie) {
-    zombie->decreaseHealth(100);
+    zombie->decreaseHealth(10);
 }
 
 std::string Soldier::getName() {
     return CharacterFactory::SOLDIER;
+}
+
+Soldier::Soldier() {
+    this->health = 100;
 }

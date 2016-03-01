@@ -13,6 +13,9 @@ class Child : public Survivor {
     virtual void attack(IZombie *zombie) override;
 
 public:
+
+    Child();
+
     virtual std::string getName() override;
 };
 

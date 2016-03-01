@@ -11,6 +11,9 @@
 class CommonInfected : public Zombie {
 
 public:
+
+    CommonInfected();
+
     virtual void attack(ISurvivor *survivor) override;
 };
 

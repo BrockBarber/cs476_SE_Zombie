@@ -9,7 +9,7 @@
 #include "ISurvivor.h"
 
 class Survivor : public ISurvivor{
-private:
+protected:
     int health;
 public:
 
