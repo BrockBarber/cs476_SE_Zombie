@@ -6,16 +6,18 @@
  */
 
 #ifndef ISURVIVAL_H
-#define	ISURVIVAL_H
+#define    ISURVIVAL_H
 
 #include "ICharacter.h"
 #include "IZombie.h"
 
 class IZombie;
 
-class ISurvivor: ICharacter{
+class ISurvivor : public ICharacter {
 public:
-    virtual void attack(IZombie* zombie) = 0;
+    virtual void attack(IZombie *zombie) = 0;
+
+    virtual int getHealth() = 0;
 };
 
 #endif	/* ISURVIVAL_H */

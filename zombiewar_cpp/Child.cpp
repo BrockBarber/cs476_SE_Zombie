@@ -1,22 +1,14 @@
-//Child Class
-//Author: Alyssa H.
+//
+// Created by horvste on 2/29/16.
+//
 
-#include<iostream>
-#include "ICharacter.h"
-#include "ISurvivor.h"
-#include "IZombie.h"
-using namespace std;
+#include "Child.h"
+#include "CharacterFactory.h"
 
-class Child : public Character{
-	public Child(){}
-	
-	int health = 20;
-	
-	public Child(int health){
-		this.health = health;
-	}
-	
-	public void attack(IZombie* zombie){
-		zombie.decreaseHealth(2);
-	}
+void Child::attack(IZombie *zombie) {
+    zombie->decreaseHealth(1);
+}
+
+std::string Child::getName() {
+    return CharacterFactory::CHILD;
 }
