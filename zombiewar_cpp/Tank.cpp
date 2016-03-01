@@ -1,23 +1,9 @@
-//Tank Class
-//Author: Amber T.
+//
+// Created by horvste on 2/29/16.
+//
 
-#include<iostream>
-#include "ICharacter.h"
-#include "ISurvivor.h"
-#include "IZombie.h"
+#include "Tank.h"
 
-using namespace std;
-
-class Tank : public Zombie{
-	public Tank();
-	
-	int health = 150;
-	
-	public Tank(int health){
-		this.health = health;
-	}
-	
-	public void attack(ISurvivor* survivor){
-		survivor.decreaseHealth(20);
-	}
+void Tank::attack(ISurvivor *survivor) {
+    survivor->decreaseHealth(1000);
 }

@@ -1,6 +1,6 @@
 /* 
  * File:   CharacterFactory.h
- * Author: Thao, Brock
+ * Author: thaoc
  *
  * Created on May 21, 2015, 1:31 PM
  * 
@@ -14,10 +14,26 @@
 
 #include<string>
 #include "ICharacter.h"
-#include "CommonInfected.h"
 
 class CharacterFactory {
-    unique_ptr<ICharacter> makeCharacter(std::string type);
+private:
+    static CharacterFactory *i;
+public:
+    static const std::string ZOMBIE;
+    static const std::string COMMON_INFECTED;
+    static const std::string TANK;
+
+    static const std::string CHILD;
+    static const std::string TEACHER;
+    static const std::string SOLDIER;
+
+    CharacterFactory();
+    CharacterFactory(const CharacterFactory& orig);
+    ICharacter* makeCharacter(std::string type);
+    static CharacterFactory* instance();
+    virtual ~CharacterFactory();
+
+
 };
 
 #endif	/* CHARACTERFACTORY_H */

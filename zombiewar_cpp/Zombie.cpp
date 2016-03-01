@@ -1,17 +1,27 @@
-//Zombie Class
-//Author: Amber T.
+//
+// Created by horvste on 2/29/16.
+//
 
-#include <iostream>
-#include "ICharacter.h"
-#include "ISurvivor.h"
-#include "IZombie.h"
+#include <bits/stringfwd.h>
+#include "Zombie.h"
 #include "CharacterFactory.h"
 
-using namespace std;
+void Zombie::decreaseHealth(int increment) {
+    health -= increment;
+}
 
-Class Zombie: public Zombie {
-  public int health;
-  Zombie(int health) {
-    this.health = health;
-  }
+bool Zombie::isAlive() {
+    return health > 0;
+}
+
+void Zombie::attack(ISurvivor *survivor) {
+    survivor->decreaseHealth(10);
+}
+
+std::string Zombie::getName() {
+    return CharacterFactory::ZOMBIE;
+}
+
+Zombie::Zombie() {
+    this->health = 100;
 }

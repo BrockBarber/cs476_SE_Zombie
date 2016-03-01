@@ -8,14 +8,16 @@
 #ifndef IZOMBIE_H
 #define	IZOMBIE_H
 
+#include <string>
 #include "ICharacter.h"
 #include "ISurvivor.h"
 
 class ISurvivor;
 
-class IZombie:ICharacter{
+class IZombie: public ICharacter{
     public:
     virtual void attack(ISurvivor * survivor) = 0;
+
 };
 
 #endif	/* IZOMBIE_H */

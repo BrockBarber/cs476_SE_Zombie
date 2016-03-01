@@ -1,3 +1,6 @@
+Compile like this "g++ *.h *.cpp -std=gnu++11 && ./a.out".
+Code is a little messy and needs refactor but will work for our needs.
+
 #Zombie War
 
 
@@ -18,6 +21,7 @@ Since a child is so weak, he or she usually does not survive the escape.
                 Health      Attack
 Common Infect   30          5
 Tank           150         20
+Predator	    80         10
 Child           20          2
 Teacher         50          5
 Soldier        100         10
@@ -42,6 +46,15 @@ survivor attack every zombie.  Next, make each zombie attack every survivor.
 Repeat until all zombie or all survivors are dead.  Then print a report of how
 many survivors made it to safety.  A dead survivor or a dead zombie should not
 attack.  
+
+Git/Github requirement
+
+Your team must use git and github to collaboratively develop this program.  
+One of the team member will create a repository, do an initial commit with
+the skeleton provided.  Then add all the team members to the repository and
+start working on the project in parallel.
+
+Your program will have two releases (or tags).  See the sample runs below.
 
 #Release 1.0's sample run:
 
