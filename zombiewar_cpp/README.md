@@ -1,3 +1,5 @@
+Compile like this "g++ *.h *.cpp -std=gnu++11" and then run "./a.out"
+
 #Zombie War
 
 
