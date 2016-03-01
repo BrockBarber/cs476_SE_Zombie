@@ -146,7 +146,7 @@ int RealZombieWar::randomNumber(bool isZombie) {
     if (isZombie)
         return random(0, 3); //returns 0 to 2
 
-    return random(3, 6); //returns 5-10
+    return random(3, 6);
 }
 
 
