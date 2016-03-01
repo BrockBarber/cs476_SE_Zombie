@@ -1,4 +1,5 @@
-Compile like this "g++ *.h *.cpp -std=gnu++11" and then run "./a.out"
+Compile like this "g++ *.h *.cpp -std=gnu++11 && ./a.out".
+Code is a little messy and needs refactor but will work for our needs.
 
 #Zombie War
 
