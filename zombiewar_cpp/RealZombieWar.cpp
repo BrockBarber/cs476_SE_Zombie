@@ -36,38 +36,38 @@ void RealZombieWar::start() {
         survivorVector.push_back(randomSurvivors());
     }
     std::cout << "We have " << numberOfRandomSurvivors << " of survivors trying to make it to safety (" <<
-            RealZombieWar::numChild << " childeren, " << RealZombieWar::numTeacher << " teachers, " <<
-            RealZombieWar::numSoldier <<" soldiers)";
+    RealZombieWar::numChild << " childeren, " << RealZombieWar::numTeacher << " teachers, " <<
+    RealZombieWar::numSoldier << " soldiers)";
 
     std::cout << "\nBut there are " << numberOfRandomZombies << " zombies waiting for them (" <<
-            RealZombieWar::numZombie << " regular zombies, " << RealZombieWar::numCommonInfected << " common-infected zombies, "
-            << RealZombieWar::numTank <<" tank zombies)";
+    RealZombieWar::numZombie << " regular zombies, " << RealZombieWar::numCommonInfected << " common-infected zombies, "
+    << RealZombieWar::numTank << " tank zombies)";
 
-    while(true) {
+    while (true) {
         bool allDead = true;
-        for(int i = 0; i < survivorVector.size(); i++){
-            if(survivorVector[i]->isAlive()){
+        for (int i = 0; i < survivorVector.size(); i++) {
+            if (survivorVector[i]->isAlive()) {
                 allDead = false;
             }
         }
-        if(allDead)
+        if (allDead)
             break;
         allDead = true;
-        for(int i = 0; i < zombieVector.size(); i++){
-            if(zombieVector[i]->isAlive()){
+        for (int i = 0; i < zombieVector.size(); i++) {
+            if (zombieVector[i]->isAlive()) {
                 allDead = false;
             }
         }
-        if(allDead)
+        if (allDead)
             break;
 
         for (int i = 0; i < numberOfRandomSurvivors; i++) {
             for (int j = 0; j < numberOfRandomZombies; j++) {
                 ISurvivor *s = survivorVector[i];
                 IZombie *zombie = zombieVector[j];
-                if(!s->isAlive())
+                if (!s->isAlive())
                     continue;
-                if(!zombie->isAlive())
+                if (!zombie->isAlive())
                     continue;
                 s->attack(zombie);
                 if (!zombie->isAlive()) {
@@ -83,8 +83,10 @@ void RealZombieWar::start() {
                 if (!s->isAlive())
                     continue;
                 //should move to attack method but don't have time right now
-                if (zombie->isAlive())
-                    zombie->attack(s);
+                if (!zombie->isAlive())
+                    continue;
+
+                zombie->attack(s);
                 if (!s->isAlive()) {
                     std::cout << "\n\t" << zombie->getName() << " " << i << " killed " << s->getName() << " " << j;
                 }
