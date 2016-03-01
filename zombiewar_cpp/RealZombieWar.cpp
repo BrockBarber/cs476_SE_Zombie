@@ -81,6 +81,8 @@ void RealZombieWar::start() {
     else
         std::cout << numMadeToSafety << " survivors made it to safety";
 
+    std::cout << "\n";
+
     for (int i = 0; i < survivorVector.size(); i++) {
         delete survivorVector[i];
     }
