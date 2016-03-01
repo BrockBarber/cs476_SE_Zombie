@@ -35,13 +35,9 @@ void RealZombieWar::start() {
     for (int i = 0; i < numberOfRandomSurvivors; i++) {
         survivorVector.push_back(randomSurvivors());
     }
-    std::cout << "We have " << numberOfRandomSurvivors << " of survivors trying to make it to safety (" <<
-    RealZombieWar::numChild << " childeren, " << RealZombieWar::numTeacher << " teachers, " <<
-    RealZombieWar::numSoldier << " soldiers)";
+    std::cout << "We have " << numberOfRandomSurvivors << " of survivors trying to make it to safety.";
 
-    std::cout << "\nBut there are " << numberOfRandomZombies << " zombies waiting for them (" <<
-    RealZombieWar::numZombie << " regular zombies, " << RealZombieWar::numCommonInfected << " common-infected zombies, "
-    << RealZombieWar::numTank << " tank zombies)";
+    std::cout << "\nBut there are " << numberOfRandomZombies << " zombies waiting for them.";
 
     while (true) {
         bool allDead = true;
@@ -71,7 +67,7 @@ void RealZombieWar::start() {
                     continue;
                 s->attack(zombie);
                 if (!zombie->isAlive()) {
-                    std::cout << "\n\t" << s->getName() << " " << i << " killed " << zombie->getName() << " " << j;
+               //     std::cout << "\n\t" << s->getName() << " " << i << " killed " << zombie->getName() << " " << j;
                 }
             }
         }
@@ -88,7 +84,7 @@ void RealZombieWar::start() {
 
                 zombie->attack(s);
                 if (!s->isAlive()) {
-                    std::cout << "\n\t" << zombie->getName() << " " << i << " killed " << s->getName() << " " << j;
+             //       std::cout << "\n\t" << zombie->getName() << " " << i << " killed " << s->getName() << " " << j;
                 }
             }
         }
