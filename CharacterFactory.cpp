@@ -9,6 +9,7 @@
 #include "Teacher.h"
 #include "Child.h"
 #include "Tank.h"
+#include "Doctor.h"
 
 const std::string CharacterFactory::ZOMBIE = "Zombie";
 const std::string CharacterFactory::COMMON_INFECTED = "CommonInfected";
@@ -17,6 +18,7 @@ const std::string CharacterFactory::TANK = "Tank";
 const std::string CharacterFactory::CHILD = "Child";
 const std::string CharacterFactory::TEACHER = "Teacher";
 const std::string CharacterFactory::SOLDIER = "Soldier";
+const std::string CharacterFactory::DOCTOR = "Doctor";
 
 
 CharacterFactory* CharacterFactory::i = NULL;
@@ -42,6 +44,8 @@ ICharacter *CharacterFactory::makeCharacter(std::string type) {
         return (ICharacter *) new Teacher();
     if(type == SOLDIER)
         return (ICharacter *) new Soldier();
+    if(type == DOCTOR)
+        return (ICharacter *) new Doctor();
 
 
     throw;

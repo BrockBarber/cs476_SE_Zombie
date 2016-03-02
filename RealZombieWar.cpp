@@ -11,6 +11,7 @@ int RealZombieWar::numTank = 0;
 int RealZombieWar::numChild = 0;
 int RealZombieWar::numTeacher = 0;
 int RealZombieWar::numSoldier = 0;
+int RealZombieWar::numDoctor = 0;
 
 RealZombieWar::RealZombieWar() {
 
@@ -37,7 +38,7 @@ void RealZombieWar::start() {
     }
     std::cout << "We have " << numberOfRandomSurvivors << " of survivors trying to make it to safety (" <<
     RealZombieWar::numChild << " childeren, " << RealZombieWar::numTeacher << " teachers, " <<
-    RealZombieWar::numSoldier << " soldiers)";
+    RealZombieWar::numSoldier << " soldiers, " << RealZombieWar::numDoctor << " doctors)";
 
     std::cout << "\nBut there are " << numberOfRandomZombies << " zombies waiting for them (" <<
     RealZombieWar::numZombie << " regular zombies, " << RealZombieWar::numCommonInfected << " common-infected zombies, "
@@ -150,6 +151,10 @@ ISurvivor *RealZombieWar::randomSurvivors() {
         RealZombieWar::numSoldier++;
         return (ISurvivor *) characterFactory->makeCharacter(CharacterFactory::SOLDIER);
     }
+    else if (randomNumber == 6) {
+        RealZombieWar::numDoctor++;
+        return (ISurvivor *) characterFactory->makeCharacter(CharacterFactory::DOCTOR);
+    }
 
     throw;
 }
@@ -171,7 +176,7 @@ int RealZombieWar::randomNumber(bool isZombie) {
     if (isZombie)
         return random(0, 3); //returns 0 to 2
 
-    return random(3, 6);
+    return random(3, 7);
 }
 
 
