@@ -27,6 +27,7 @@ public:
     static const std::string TEACHER;
     static const std::string SOLDIER;
     static const std::string DOCTOR;
+    static const std::string LAWYER;
 
     CharacterFactory();
     CharacterFactory(const CharacterFactory& orig);
