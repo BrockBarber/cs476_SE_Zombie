@@ -22,6 +22,7 @@ private:
     static int numTeacher;
     static int numSoldier;
     static int numDoctor;
+    static int numLawyer;
 
     IZombie * randomZombies();
     ISurvivor * randomSurvivors();
